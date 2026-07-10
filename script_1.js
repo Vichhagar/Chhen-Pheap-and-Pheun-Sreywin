@@ -343,6 +343,52 @@
     });
   });
 
+  // /* ---------------------------------------------------------
+  //    11. COUNTDOWN — flip cards
+  // --------------------------------------------------------- */
+  // const weddingDate = new Date(CONFIG.weddingDateISO).getTime();
+  // const flipEls = {
+  //   days: document.querySelector("#flipDays .flip__num"),
+  //   hours: document.querySelector("#flipHours .flip__num"),
+  //   minutes: document.querySelector("#flipMinutes .flip__num"),
+  //   seconds: document.querySelector("#flipSeconds .flip__num"),
+  // };
+  // const flipCards = {
+  //   days: document.getElementById("flipDays"),
+  //   hours: document.getElementById("flipHours"),
+  //   minutes: document.getElementById("flipMinutes"),
+  //   seconds: document.getElementById("flipSeconds"),
+  // };
+  // let lastValues = { days: "", hours: "", minutes: "", seconds: "" };
+
+  // function updateCountdown() {
+  //   const now = Date.now();
+  //   let diff = Math.max(0, weddingDate - now);
+  //   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  //   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+  //   const minutes = Math.floor((diff / (1000 * 60)) % 60);
+  //   const seconds = Math.floor((diff / 1000) % 60);
+  //   const values = {
+  //     days: String(days).padStart(2, "0"),
+  //     hours: String(hours).padStart(2, "0"),
+  //     minutes: String(minutes).padStart(2, "0"),
+  //     seconds: String(seconds).padStart(2, "0"),
+  //   };
+  //   Object.keys(values).forEach((key) => {
+  //     if (values[key] !== lastValues[key]) {
+  //       flipEls[key].textContent = values[key];
+  //       if (!reduceMotion) {
+  //         flipCards[key].classList.remove("is-flipping");
+  //         void flipCards[key].offsetWidth; // reflow to restart animation
+  //         flipCards[key].classList.add("is-flipping");
+  //       }
+  //     }
+  //   });
+  //   lastValues = values;
+  // }
+  // updateCountdown();
+  // setInterval(updateCountdown, 1000);
+
   /* ---------------------------------------------------------
      11. COUNTDOWN — flip cards
   --------------------------------------------------------- */
