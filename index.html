@@ -1,0 +1,963 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
+    <title>Chhen Pheap &amp; Pheun Sreywin — Wedding Invitation</title>
+    <meta
+      name="description"
+      content="You are warmly invited to the wedding of Chhen Pheap and Pheun Sreywin."
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&family=Battambang:wght@400;700&family=Kantumruy+Pro:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- ============ CUSTOM CURSOR GLOW ============ -->
+    <div class="cursor-glow" aria-hidden="true"></div>
+
+    <!-- ============ SCROLL PROGRESS ============ -->
+    <div class="scroll-progress" aria-hidden="true">
+      <div class="scroll-progress__bar" id="scrollProgressBar"></div>
+    </div>
+
+    <!-- ============ LOADING SCREEN ============ -->
+    <div class="loader" id="loader" role="status" aria-live="polite">
+      <div class="loader__ornament" aria-hidden="true">
+        <svg viewBox="0 0 200 200" class="loader__lotus">
+          <g class="lotus-petals">
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(0 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(45 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(90 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(135 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(180 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(225 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(270 100 100)"
+            />
+            <path
+              class="petal"
+              d="M100,100 C100,60 80,20 100,10 C120,20 100,60 100,100 Z"
+              transform="rotate(315 100 100)"
+            />
+          </g>
+          <circle cx="100" cy="100" r="8" class="lotus-center" />
+        </svg>
+      </div>
+      <p class="loader__label">កំពុងរៀបចំការអញ្ជើញរបស់អ្នក</p>
+      <div class="loader__bar">
+        <div class="loader__bar-fill" id="loaderFill"></div>
+      </div>
+      <p class="loader__percent" id="loaderPercent">0%</p>
+    </div>
+
+    <!-- ============ SCROLL / ENVELOPE OPENING ============ -->
+    <div class="scroll-gate" id="scrollGate">
+      <div class="scroll-gate__bg" aria-hidden="true"></div>
+      <div class="scroll-gate__scroll" id="scrollGateScroll">
+        <div
+          class="scroll-gate__rod scroll-gate__rod--top"
+          aria-hidden="true"
+        ></div>
+        <div class="scroll-gate__paper">
+          <p
+            class="scroll-gate__invite"
+            id="scrollGateInvite"
+            style="font-style: normal"
+          >
+            សូមគោរពអញ្ជើញ
+          </p>
+          <p class="scroll-gate__names" style="font-family: Moul, serif">
+            ភាព <span class="amp">&amp;</span> ស្រីវិន
+          </p>
+          <p class="scroll-gate__names-en">Chhen Pheap &amp; Pheun Sreywin</p>
+          <button class="btn btn--ghost scroll-gate__enter" id="enterSiteBtn">
+            ទទួលយកការអញ្ជើញ
+          </button>
+        </div>
+        <div
+          class="scroll-gate__rod scroll-gate__rod--bottom"
+          aria-hidden="true"
+        ></div>
+      </div>
+    </div>
+
+    <!-- ============ SITE CONTENT ============ -->
+    <div class="site" id="site" aria-hidden="true">
+      <!-- Background layers -->
+      <div class="bg-scene" aria-hidden="true">
+        <div class="bg-scene__sky"></div>
+        <div class="bg-scene__clouds bg-scene__clouds--1"></div>
+        <div class="bg-scene__clouds bg-scene__clouds--2"></div>
+        <svg
+          class="bg-scene__temple"
+          viewBox="0 0 1440 320"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M0,300 L60,300 L60,260 L90,260 L90,220 L110,220 L110,150 L120,150 L120,100 L130,60 L140,100 L140,150 L150,150 L150,220 L170,220 L170,260 L200,260 L200,300 L260,300 L260,270 L300,270 L300,230 L330,230 L330,180 L345,180 L345,120 L360,80 L375,120 L375,180 L390,180 L390,230 L420,230 L420,270 L460,270 L460,300 L560,300 L560,240 L610,240 L610,190 L640,190 L640,110 L660,60 L680,110 L680,190 L710,190 L710,240 L760,240 L760,300 L860,300 L860,260 L900,260 L900,210 L930,210 L930,140 L945,140 L945,90 L960,50 L975,90 L975,140 L990,140 L990,210 L1020,210 L1020,260 L1060,260 L1060,300 L1160,300 L1160,270 L1200,270 L1200,230 L1225,230 L1225,170 L1240,130 L1255,170 L1255,230 L1280,230 L1280,270 L1320,270 L1320,300 L1440,300 L1440,320 L0,320 Z"
+          />
+        </svg>
+        <div class="bg-scene__mist"></div>
+        <div class="bg-scene__pond"></div>
+        <div class="bg-scene__particles" id="bgParticles"></div>
+      </div>
+
+      <!-- ============ NAVIGATION ============ -->
+      <nav class="nav" id="siteNav" aria-label="Primary">
+        <a href="#hero" class="nav__brand"
+          >S <span aria-hidden="true">&amp;</span> C</a
+        >
+        <button
+          class="nav__toggle"
+          id="navToggle"
+          aria-label="Open menu"
+          aria-expanded="false"
+          aria-controls="navMenu"
+        >
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#welcome" data-nav>Welcome</a></li>
+          <li><a href="#couple" data-nav>The Couple</a></li>
+          <li><a href="#story" data-nav>Our Story</a></li>
+          <li><a href="#details" data-nav>Details</a></li>
+          <li><a href="#schedule" data-nav>Schedule</a></li>
+          <li><a href="#gallery" data-nav>Gallery</a></li>
+          <li><a href="#venue" data-nav>Venue</a></li>
+          <li><a href="#rsvp" data-nav>RSVP</a></li>
+          <li><a href="#wishes" data-nav>Wishes</a></li>
+        </ul>
+      </nav>
+
+      <!-- ============ HERO ============ -->
+      <header class="hero" id="hero">
+        <div class="hero__ornament-top" aria-hidden="true">
+          <svg viewBox="0 0 400 120"><use href="#khmer-crown" /></svg>
+        </div>
+        <p
+          class="hero__eyebrow reveal-fade"
+          data-reveal
+          style="
+            font-family: Moulpali, sans-serif;
+            font-size: 130%;
+            letter-spacing: normal;
+          "
+        >
+          សិរីមង្គលអាពាហ៍ពិពាហ៍
+        </p>
+        <h1 class="hero__names" style="margin-block: 5px">
+          <span
+            class="hero__name reveal-blur"
+            data-reveal
+            style="
+              font-family: &quot;Moul&quot;, serif;
+              font-weight: 400;
+              font-style: normal;
+            "
+            >ភាព</span
+          >
+          <span class="hero__amp reveal-scale" data-reveal>&amp;</span>
+          <span
+            class="hero__name reveal-blur"
+            data-reveal
+            style="
+              font-family: &quot;Moul&quot;, serif;
+              font-weight: 400;
+              font-style: normal;
+            "
+            >ស្រីវិន</span
+          >
+        </h1>
+        <!-- <p class="hero__khmer reveal-fade" data-reveal>សិរីមង្គលអាពាហ៍ពិពាហ៍</p> -->
+        <div class="hero__date reveal-fade" data-reveal>
+          <span>ថ្ងៃអាទិត្យ</span><span class="dot">•</span
+          ><span>២៦ កក្កដា ២០២៦</span><span class="dot">•</span
+          ><span>ម៉ោង ០៨:០០ ព្រឹក</span><span class="dot">•</span
+          ><span>ទួលគោក, ភ្នំពេញ</span>
+        </div>
+        <button class="btn btn--gold hero__cta" id="openInvitationBtn">
+          <span>ទទួលយកការអញ្ជើញ</span>
+        </button>
+        <div class="hero__scroll-cue" aria-hidden="true">
+          <span></span>ចាប់ផ្តើមដំណើរ
+        </div>
+      </header>
+
+      <!-- ============ WELCOME ============ -->
+      <section class="section welcome" id="welcome">
+        <div class="ornament-divider" aria-hidden="true">
+          <svg viewBox="0 0 300 40"><use href="#khmer-divider" /></svg>
+        </div>
+        <p class="eyebrow" data-reveal>សូមស្វាគមន៍</p>
+        <h2
+          class="section-title calligraphy"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          សូមគោរពអញ្ជើញ
+        </h2>
+        <p class="welcome__text" data-reveal>
+          សូមគោរពអញ្ជើញ សម្តេច ទ្រង់ ឯកឧត្តម អ្នកឧកញ៉ា លោកឧកញ៉ា លោកជំទាវ លោក
+          លោកស្រី អ្នកនាងកញ្ញា និងប្រិយ មិត្ត អញ្ជើញចូលរួមជាអធិបតី និង
+          ជាភ្ញៀវកិត្តិយស ដើម្បីប្រសិទ្ធិ ពរជ័យ សិរីសួស្តី ជ័យមង្គល ក្នុង
+          ពិធីរៀបអាពាហ៍ពិពាហ៍
+        </p>
+      </section>
+
+      <!-- ============ COUPLE ============ -->
+      <section class="section couple" id="couple">
+        <p class="eyebrow" data-reveal>គូស្នេហ៍</p>
+        <h2
+          class="section-title"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          អារពាហ៍ពិពាហ៍ក្នុងព្រះអម្ចាស់
+        </h2>
+        <div class="couple__grid">
+          <article class="couple-card reveal-left" data-reveal data-tilt>
+            <div class="couple-card__frame">
+              <div
+                class="couple-card__photo couple-card__photo--groom"
+                role="img"
+                aria-label="Portrait of the groom, Chhen Pheap"
+              >
+                <img src="./gro.png" alt="" />
+              </div>
+            </div>
+            <h3 style="font-family: Moul, serif">ឆេន ភាព</h3>
+            <p class="couple-card__role">កូនកម្លោះ</p>
+            <p class="couple-card__bio">
+              កូនប្រុសលោក ឌុច ឆេន និង អ្នកស្រី ឈិត ធូ
+            </p>
+          </article>
+          <div
+            class="couple__center reveal-scale"
+            data-reveal
+            aria-hidden="true"
+          >
+            <svg viewBox="0 0 120 160" class="couple__lotus-icon">
+              <use href="#lotus-single" />
+            </svg>
+          </div>
+          <article class="couple-card reveal-right" data-reveal data-tilt>
+            <div class="couple-card__frame">
+              <div
+                class="couple-card__photo couple-card__photo--bride"
+                role="img"
+                aria-label="Portrait of the bride, Pheun Sreywin"
+              >
+                <img src="./br.png" alt="" />
+              </div>
+            </div>
+            <h3 style="font-family: Moul, serif">ភឿន ស្រីវិន</h3>
+            <p class="couple-card__role">កូនក្រមុំ</p>
+            <p class="couple-card__bio">
+              កូនស្រីរបស់លោក ចក់ ភឿន និង អ្នកស្រី ខ្វិន មុំ
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ LOVE STORY TIMELINE ============ -->
+      <section class="section story" id="story">
+        <p class="eyebrow" data-reveal>លំដាប់នៃថ្ងៃនោះ</p>
+        <h2 class="section-title" data-reveal>កាលវិភាគ</h2>
+
+        <div class="timeline" id="timeline">
+          <div class="timeline__line" aria-hidden="true">
+            <div class="timeline__line-fill" id="timelineFill"></div>
+          </div>
+
+          <div class="timeline__item reveal-fade" data-reveal>
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០១</span>
+              <h3>ស្វាគមន៏ និងអធិស្ឋានបើក</h3>
+              <p>ប៉ាស្ទ័រ ហេង សុជាតិ</p>
+            </div>
+          </div>
+
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៣</span>
+              <h3>ការដើរចូល</h3>
+              <p>កូនកម្លោះ និង មាតាបិតា, គ្រូគង្វាល, កូនកំដរ</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៤</span>
+              <h3>ការដើរចូល</h3>
+              <p>កូនក្រមុំ</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៥</span>
+              <h3>លាងជើង</h3>
+              <p>លាងជើងជូនមាតាបិតាទាំងសងខាង</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៦</span>
+              <h3>ចំរៀងពិសេស</h3>
+              <p>អ្នកស្រី ជិន ចរិយ៉ា និង លោកគ្រូ ជុង សុជាតិ</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៧</span>
+              <h3>អំណានព្រះគម្ពីរ</h3>
+              <p>
+                អេភេសូ ៥:២២-៣២ និងង ៦:១-៤ លោកគ្រូ មាស សុភ័ក្រ្ត និង អ្នកគ្រូ ឈុន
+                សាវឿន
+              </p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៨</span>
+              <h3>បកស្រាយព្រះគម្ពីរ</h3>
+              <p>ប៉ាស្ទ័រ នឿមវណ្ណៈ</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">០៩</span>
+              <h3>ការប្ដេជ្ញាចិត្ត</h3>
+              <p>លោក ឆេន ភាព និង កញ្ញា ភឿន ស្រីវិន</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">១០</span>
+              <h3>អុជទៀនផ្សំផ្គុំ</h3>
+              <p>មាតាទាំងសងខាង</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">១១</span>
+              <h3>គង្វាលអធិស្ឋាន</h3>
+              <p>ប៉ាស្ទ័រ នឿម វណ្ណៈ</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">១២</span>
+              <h3>ចុះហត្ថលេខា</h3>
+              <p>លោក ញិន វិច្ឆិកា និង កញ្ញា រិន បុរ៉ី</p>
+            </div>
+          </div>
+          <div
+            class="timeline__item timeline__item--right reveal-fade"
+            data-reveal
+          >
+            <div class="timeline__bloom" aria-hidden="true">
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card">
+              <span class="timeline__date">១៣</span>
+              <h3>ប្រគល់ព្រះគម្ពីរ</h3>
+              <p>ប៉ាស្ទ័រ នឿម វណ្ណៈ</p>
+            </div>
+          </div>
+
+          <div class="timeline__item reveal-fade" data-reveal>
+            <div
+              class="timeline__bloom timeline__bloom--gold"
+              aria-hidden="true"
+            >
+              <svg viewBox="0 0 60 60"><use href="#mini-lotus" /></svg>
+            </div>
+            <div class="timeline__card timeline__card--gold">
+              <span class="timeline__date">១៤</span>
+              <h3>បញ្ចប់កម្មវិធី</h3>
+              <p>អធិស្ឋានបិទ</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ WEDDING DETAILS ============ -->
+      <!-- <section class="section details" id="details">
+        <div class="ornament-divider" aria-hidden="true">
+          <svg viewBox="0 0 300 40"><use href="#khmer-divider" /></svg>
+        </div>
+        <p class="eyebrow" data-reveal>Wedding Details</p>
+        <h2
+          class="section-title"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          Join Us As We Celebrate
+        </h2>
+        <div class="details__grid">
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">📅</div>
+            <h3>Date</h3>
+            <p>Sunday, 26 July 2026</p>
+          </div>
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">⏰</div>
+            <h3>Time</h3>
+            <p>Ceremony 11:30 AM<br />Reception until 1:30 PM</p>
+          </div>
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">👗</div>
+            <h3>Dress Code</h3>
+            <p>Traditional Khmer attire<br />Gold &amp; Burgundy tones</p>
+          </div>
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">🏮</div>
+            <h3>Ceremony</h3>
+            <p>Sacred blessing rites<br />at the family home</p>
+          </div>
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">🥂</div>
+            <h3>Reception</h3>
+            <p>
+              Cambodia Adventist Mission &amp; Toul Kork Church<br />Phnom Penh
+            </p>
+          </div>
+          <div class="detail-card reveal-up" data-reveal data-tilt>
+            <div class="detail-card__icon" aria-hidden="true">💌</div>
+            <h3>RSVP By</h3>
+            <p>1 October 2026</p>
+          </div>
+        </div>
+      </section> -->
+
+      <!-- ============ COUNTDOWN ============ -->
+      <section class="section countdown" id="countdown">
+        <p class="eyebrow eyebrow--light" data-reveal>រាប់ថយក្រោយ</p>
+        <h2
+          class="section-title section-title--light"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          ចងចាំកាលបរិច្ឆេទ
+        </h2>
+        <div class="countdown__grid" id="countdownGrid" data-reveal>
+          <div class="flip">
+            <div class="flip__card" id="flipDays">
+              <span class="flip__num">00</span>
+            </div>
+            <span class="flip__label">Days</span>
+          </div>
+          <div class="flip">
+            <div class="flip__card" id="flipHours">
+              <span class="flip__num">00</span>
+            </div>
+            <span class="flip__label">Hours</span>
+          </div>
+          <div class="flip">
+            <div class="flip__card" id="flipMinutes">
+              <span class="flip__num">00</span>
+            </div>
+            <span class="flip__label">Minutes</span>
+          </div>
+          <div class="flip">
+            <div class="flip__card" id="flipSeconds">
+              <span class="flip__num">00</span>
+            </div>
+            <span class="flip__label">Seconds</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GALLERY ============ -->
+      <section class="section gallery" id="gallery">
+        <div class="ornament-divider" aria-hidden="true">
+          <svg viewBox="0 0 300 40"><use href="#khmer-divider" /></svg>
+        </div>
+        <p class="eyebrow" data-reveal>ពេលវេលាជាមួយគ្នា</p>
+        <h2
+          class="section-title"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          វិចិត្រសាលរបស់យើង
+        </h2>
+        <div class="masonry" id="masonry">
+          <!-- gallery items injected / present as placeholders -->
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="1"
+            style="--h: 1.3; --hue: 280"
+          >
+            <img loading="lazy" src="./imgs/1.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="2"
+            style="--h: 1; --hue: 320"
+          >
+            <img loading="lazy" src="./imgs/2.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="3"
+            style="--h: 1.6; --hue: 200"
+          >
+            <img loading="lazy" src="./imgs/3.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="4"
+            style="--h: 1; --hue: 260"
+          >
+            <img loading="lazy" src="./imgs/4.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="5"
+            style="--h: 1.4; --hue: 190"
+          >
+            <imgloading ="lazy" src="./imgs/5.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+          <button
+            class="masonry__item reveal-fade"
+            data-reveal
+            data-full="6"
+            style="--h: 1.1; --hue: 300"
+          >
+            <img loading="lazy" src="./imgs/6.jpg" alt="" />
+            <span class="masonry__caption">CHHEN PHEAP & PHEUN SREYWIN</span>
+          </button>
+        </div>
+        <!-- <p class="gallery__hint">Tap any photo for a closer look</p> -->
+      </section>
+
+      <!-- Lightbox -->
+      <div
+        class="lightbox"
+        id="lightbox"
+        aria-hidden="true"
+        role="dialog"
+        aria-modal="true"
+        aria-label="Photo viewer"
+      >
+        <button
+          class="lightbox__close"
+          id="lightboxClose"
+          aria-label="Close photo viewer"
+        >
+          &times;
+        </button>
+        <button
+          class="lightbox__nav lightbox__nav--prev"
+          id="lightboxPrev"
+          aria-label="Previous photo"
+        >
+          &#10094;
+        </button>
+        <!-- <div class="lightbox__stage" id="lightboxStage"></div> -->
+        <button
+          class="lightbox__nav lightbox__nav--next"
+          id="lightboxNext"
+          aria-label="Next photo"
+        >
+          &#10095;
+        </button>
+      </div>
+
+      <!-- ============ VENUE ============ -->
+      <section class="section venue" id="venue">
+        <p class="eyebrow" data-reveal>ទីកន្លែង</p>
+        <h2
+          class="section-title"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          ទីតាំងរបស់យើង
+        </h2>
+        <div class="venue__wrap reveal-up" data-reveal>
+          <div class="venue__map">
+            <iframe
+              title="Wedding venue map"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              src="https://www.google.com/maps?q=11.580659,104.892598(Cambodia+Adventist+Mission+%26+Toul+Kork+Church)&z=16&output=embed"
+            ></iframe>
+          </div>
+          <div class="venue__card">
+            <h3>Cambodia Adventist Mission &amp; Toul Kork Church</h3>
+            <p>No. 12, Preah Norodom Blvd,<br />Phnom Penh, Cambodia</p>
+            <p class="venue__note">ពិធីចាប់ពីម៉ោង ០៨:០០ ព្រឹក</p>
+            <div class="venue__buttons">
+              <a
+                class="btn btn--gold"
+                href="https://maps.app.goo.gl/iq7oWxUjYkQvggPn7"
+                target="_blank"
+                rel="noopener"
+                >បើកនៅក្នុង Google Maps</a
+              >
+              <a
+                class="btn btn--outline"
+                href="https://www.google.com/maps/dir/?api=1&destination=11.580659,104.892598"
+                target="_blank"
+                rel="noopener"
+                >ទទួលទិសដៅ</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GIFT ============ -->
+      <section class="section gift" id="gift">
+        <p class="eyebrow" data-reveal>ដោយក្តីស្រលាញ់</p>
+        <h2
+          class="section-title"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          ការផ្តល់អំណោយ
+        </h2>
+        <div class="gift__grid reveal-up" data-reveal>
+          <div class="gift__qr">
+            <!-- <svg viewBox="0 0 120 120" aria-label="QR code placeholder">
+              <use href="#qr-placeholder" />
+            </svg> -->
+            <img style="width: 70%" src="./qr.png" alt="" />
+            <span>ស្កេនដើម្បីផ្ញើពរជ័យ</span>
+          </div>
+          <div class="gift__bank">
+            <h3>ការផ្ទេរប្រាក់តាមធនាគារ</h3>
+            <p>
+              ABA Bank<br />Acc. ឈ្មោះ: Pheun Sreywin<br />
+              លេខគណនី(KHR): 004 053 322 <br />
+              លេខគណនី(USD): 018 368 001
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ GUEST WISHES ============ -->
+      <!-- <section class="section wishes" id="wishes">
+        <div class="ornament-divider" aria-hidden="true">
+          <svg viewBox="0 0 300 40"><use href="#khmer-divider" /></svg>
+        </div>
+        <p class="eyebrow" data-reveal>Guestbook</p>
+        <h2 class="section-title" data-reveal>Wishes For The Couple</h2>
+        <form class="wish-form reveal-fade" id="wishForm" data-reveal>
+          <input type="text" id="wishName" placeholder="Your name" required />
+          <textarea
+            id="wishMessage"
+            rows="2"
+            placeholder="Leave a blessing..."
+            required
+          ></textarea>
+          <button type="submit" class="btn btn--outline">Add Wish</button>
+        </form>
+        <div class="wish-cards" id="wishCards"></div>
+      </section> -->
+
+      <!-- ============ THANK YOU ============ -->
+      <section class="section thankyou" id="thankyou">
+        <div
+          class="thankyou__lanterns"
+          aria-hidden="true"
+          id="lanternField"
+        ></div>
+        <p class="eyebrow eyebrow--light" data-reveal>From Our Hearts</p>
+        <h2
+          class="section-title section-title--light"
+          data-reveal
+          style="font-family: Moulpali, sans-serif; font-style: normal"
+        >
+          Thank You
+        </h2>
+        <p class="thankyou__text" data-reveal>
+          To our beloved family and friends — thank you for shaping our story,
+          for your endless love, and for standing beside us as we begin this new
+          chapter. We are because you are.
+        </p>
+        <p class="thankyou__signature" data-reveal>
+          Chhen Pheap &amp; Pheun Sreywin
+        </p>
+      </section>
+
+      <!-- ============ FOOTER ============ -->
+      <footer class="footer">
+        <div class="ornament-divider" aria-hidden="true">
+          <svg viewBox="0 0 300 40"><use href="#khmer-divider" /></svg>
+        </div>
+        <!-- <p class="footer__names">
+          Chhen Pheap <span aria-hidden="true">&amp;</span> Pheun Sreywin
+        </p> -->
+        <div class="footer__social">
+          <a href="#" aria-label="Facebook">FB</a>
+          <a href="#" aria-label="Instagram">IG</a>
+          <a href="#" aria-label="Telegram">TG</a>
+        </div>
+        <p class="footer__contact">
+          016 796 505 (Groom) &nbsp;•&nbsp; 092 743 062 (Bride)
+        </p>
+        <p class="footer__copyright">
+          &copy; 2026 Chhen Pheap &amp; Pheun Sreywin. Made with love in Phnom
+          Penh.
+        </p>
+      </footer>
+
+      <!-- ============ FLOATING CONTROLS ============ -->
+      <div class="music-player" id="musicPlayer">
+        <button
+          class="music-player__toggle"
+          id="musicToggle"
+          aria-label="Play music"
+          aria-pressed="false"
+        >
+          <svg viewBox="0 0 24 24" class="icon-note">
+            <path
+              d="M9 18V5l12-2v13"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <circle
+              cx="6"
+              cy="18"
+              r="3"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            />
+            <circle
+              cx="18"
+              cy="16"
+              r="3"
+              stroke="currentColor"
+              stroke-width="1.5"
+              fill="none"
+            />
+          </svg>
+        </button>
+        <div class="music-player__panel">
+          <button id="musicPlayPause" aria-label="Play or pause">▶</button>
+          <input
+            type="range"
+            id="musicVolume"
+            min="0"
+            max="1"
+            step="0.05"
+            value="0.5"
+            aria-label="Volume"
+          />
+          <button id="musicMute" aria-label="Mute">🔊</button>
+        </div>
+        <audio id="bgMusic" loop preload="none">
+          <source src="assets/music/wedding-theme.mp3" type="audio/mpeg" />
+        </audio>
+      </div>
+
+      <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        ↑
+      </button>
+    </div>
+
+    <!-- ============ SVG SPRITE (reused ornaments) ============ -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <defs>
+        <symbol id="khmer-crown" viewBox="0 0 400 120">
+          <path
+            d="M20,110 Q40,20 100,60 Q140,10 200,50 Q260,10 300,60 Q360,20 380,110"
+            fill="none"
+            stroke="#D4AF37"
+            stroke-width="2"
+          />
+          <circle cx="200" cy="30" r="6" fill="#D4AF37" />
+          <circle cx="100" cy="45" r="4" fill="#D4AF37" />
+          <circle cx="300" cy="45" r="4" fill="#D4AF37" />
+        </symbol>
+        <symbol id="khmer-divider" viewBox="0 0 300 40">
+          <line
+            x1="0"
+            y1="20"
+            x2="115"
+            y2="20"
+            stroke="#D4AF37"
+            stroke-width="1"
+          />
+          <line
+            x1="185"
+            y1="20"
+            x2="300"
+            y2="20"
+            stroke="#D4AF37"
+            stroke-width="1"
+          />
+          <path
+            d="M150,5 C160,15 160,25 150,35 C140,25 140,15 150,5 Z"
+            fill="#D4AF37"
+          />
+          <circle cx="125" cy="20" r="2.5" fill="#D4AF37" />
+          <circle cx="175" cy="20" r="2.5" fill="#D4AF37" />
+        </symbol>
+        <symbol id="lotus-single" viewBox="0 0 120 160">
+          <g fill="#D4AF37">
+            <path d="M60,150 C60,110 40,70 60,40 C80,70 60,110 60,150 Z" />
+            <path
+              d="M60,150 C60,110 20,90 15,55 C55,60 60,110 60,150 Z"
+              opacity="0.85"
+            />
+            <path
+              d="M60,150 C60,110 100,90 105,55 C65,60 60,110 60,150 Z"
+              opacity="0.85"
+            />
+          </g>
+        </symbol>
+        <symbol id="mini-lotus" viewBox="0 0 60 60">
+          <g fill="#D4AF37">
+            <path d="M30,55 C30,40 22,25 30,12 C38,25 30,40 30,55 Z" />
+            <path
+              d="M30,55 C30,40 12,32 10,18 C26,22 30,40 30,55 Z"
+              opacity="0.8"
+            />
+            <path
+              d="M30,55 C30,40 48,32 50,18 C34,22 30,40 30,55 Z"
+              opacity="0.8"
+            />
+          </g>
+        </symbol>
+        <symbol id="qr-placeholder" viewBox="0 0 120 120">
+          <rect width="120" height="120" fill="#FDF8F0" />
+          <g fill="#2B1A12">
+            <rect x="8" y="8" width="28" height="28" />
+            <rect x="16" y="16" width="12" height="12" fill="#FDF8F0" />
+            <rect x="84" y="8" width="28" height="28" />
+            <rect x="92" y="16" width="12" height="12" fill="#FDF8F0" />
+            <rect x="8" y="84" width="28" height="28" />
+            <rect x="16" y="92" width="12" height="12" fill="#FDF8F0" />
+            <rect x="48" y="8" width="8" height="8" />
+            <rect x="64" y="8" width="8" height="8" />
+            <rect x="48" y="24" width="8" height="8" />
+            <rect x="48" y="48" width="8" height="8" />
+            <rect x="64" y="48" width="8" height="8" />
+            <rect x="80" y="48" width="8" height="8" />
+            <rect x="48" y="64" width="8" height="8" />
+            <rect x="64" y="64" width="8" height="8" />
+            <rect x="48" y="80" width="8" height="8" />
+            <rect x="64" y="96" width="8" height="8" />
+            <rect x="80" y="80" width="8" height="8" />
+            <rect x="96" y="64" width="8" height="8" />
+            <rect x="96" y="96" width="8" height="8" />
+          </g>
+        </symbol>
+      </defs>
+    </svg>
+
+    <script src="script.js"></script>
+  </body>
+</html>
