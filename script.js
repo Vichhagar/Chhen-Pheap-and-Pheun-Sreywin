@@ -447,11 +447,11 @@
   --------------------------------------------------------- */
   const videoPlayBtn = document.getElementById("videoPlayBtn");
   const videoFrame = document.getElementById("videoFrame");
-  videoPlayBtn.addEventListener("click", () => {
-    videoFrame.innerHTML = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;text-align:center;padding:20px;background:linear-gradient(150deg,#8a4a4f,#2B1A12);">
-      Add your wedding video by replacing this section with a &lt;video&gt; tag or an embedded player.
-    </div>`;
-  });
+  // videoPlayBtn.addEventListener("click", () => {
+  //   videoFrame.innerHTML = `<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;text-align:center;padding:20px;background:linear-gradient(150deg,#8a4a4f,#2B1A12);">
+  //     Add your wedding video by replacing this section with a &lt;video&gt; tag or an embedded player.
+  //   </div>`;
+  // });
 
   /* ---------------------------------------------------------
      14. RSVP FORM — validation, submit animation, confetti, popup
@@ -459,26 +459,6 @@
   const rsvpForm = document.getElementById("rsvpForm");
   const rsvpPopup = document.getElementById("rsvpPopup");
   const rsvpPopupClose = document.getElementById("rsvpPopupClose");
-
-  rsvpForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    if (!rsvpForm.checkValidity()) {
-      rsvpForm.reportValidity();
-      return;
-    }
-    if (!reduceMotion) spawnFX();
-    rsvpPopup.classList.add("is-open");
-    rsvpPopup.setAttribute("aria-hidden", "false");
-    rsvpForm.reset();
-  });
-  function closeRsvpPopup() {
-    rsvpPopup.classList.remove("is-open");
-    rsvpPopup.setAttribute("aria-hidden", "true");
-  }
-  rsvpPopupClose.addEventListener("click", closeRsvpPopup);
-  rsvpPopup.addEventListener("click", (e) => {
-    if (e.target === rsvpPopup) closeRsvpPopup();
-  });
 
   /* ---------------------------------------------------------
      15. GUEST WISHES — add cards dynamically
@@ -495,29 +475,6 @@
       message: "So happy for you both. Can\u2019t wait to celebrate!",
     },
   ];
-  function addWishCard(name, message) {
-    const card = document.createElement("div");
-    card.className = "wish-card";
-    const nameEl = document.createElement("p");
-    nameEl.className = "wish-card__name";
-    nameEl.textContent = name;
-    const msgEl = document.createElement("p");
-    msgEl.className = "wish-card__msg";
-    msgEl.textContent = message;
-    card.appendChild(nameEl);
-    card.appendChild(msgEl);
-    wishCards.prepend(card);
-  }
-  seedWishes.forEach((w) => addWishCard(w.name, w.message));
-
-  wishForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    const name = document.getElementById("wishName").value.trim();
-    const message = document.getElementById("wishMessage").value.trim();
-    if (!name || !message) return;
-    addWishCard(name, message);
-    wishForm.reset();
-  });
 
   /* ---------------------------------------------------------
      16. MUSIC PLAYER
